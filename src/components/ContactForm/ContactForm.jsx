@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { Form, FormField } from './ContactForm.styled';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
+import { Filter } from 'components/Filter/Filter';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
