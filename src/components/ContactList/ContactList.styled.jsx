@@ -7,6 +7,7 @@ export const ContactsList = styled.ul`
   align-items: flex-start;
   padding-left: 0;
   gap: 4px;
+  margin-bottom: 100px;
 `;
 
 export const ContactsListItem = styled.li`

@@ -1,12 +1,31 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
+export default function Navigation() {
+  const styles = {
+    link: {
+      display: 'inline-block',
+      textDecoration: 'none',
+      padding: 12,
+      fontWeight: 700,
+      color: '#2A363B',
+    },
+    activeLink: {
+      color: '#E84A5F',
+    },
+  };
 
-export default function Navigation(){
-
-    return (
-        <nav>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/contact'>Contact</NavLink>
-        </nav>
-    )
+  return (
+    <nav>
+      <NavLink to="/" style={styles.link} activeStyle={styles.activeLink}>
+        Home
+      </NavLink>
+      <NavLink
+        to="/contact"
+        style={styles.link}
+        activeStyle={styles.activeLink}
+      >
+        Contact
+      </NavLink>
+    </nav>
+  );
 }

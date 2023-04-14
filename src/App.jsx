@@ -1,12 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
+import { ContactForm } from './components/ContactForm/ContactForm';
+import { ContactList } from './components/ContactList/ContactList';
+import { Filter } from './components/Filter/Filter';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 import { selectError, selectFilter } from 'redux/selectors';
-import AppBar from './AppBar';
+import AppBar from './components/AppBar';
 import { Route, Routes } from 'react-router-dom';
+import RegisterView from 'views/RegisterView';
+import LoginView from 'views/LoginView';
+import HomeView from 'views/HomeView';
 
 export function App() {
   const dispatch = useDispatch();
@@ -19,13 +22,13 @@ export function App() {
 
   return (
     <div>
-      <AppBar/>
-
+      <AppBar />
 
       <Routes>
-        <Route path="/" element={<h1>Home</h1>}/>
-        <Route path="/contact" element={<ContactList/>}/>
-        <Route path="/restered" element={<ContactForm/>}/>
+        <Route path="/" element={<HomeView />} />
+        <Route path="/contact" element={<ContactList />} />
+        <Route path="/restered" element={<RegisterView />} />
+        <Route path="/sing-in" element={<LoginView />} />
       </Routes>
 
       {/* <h1>Phonebook</h1> */}
