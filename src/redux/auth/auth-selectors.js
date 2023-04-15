@@ -1,3 +1,3 @@
-export const selectIsLogin = state => state.isLogin;
+export const selectIsLogin = state => state.auth.isLogin;
 
-export const selectUserName = state => state.user.name;
+export const selectUserName = state => state.auth.user.name;

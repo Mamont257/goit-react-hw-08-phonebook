@@ -2,8 +2,13 @@ import { Route, Routes } from 'react-router-dom';
 import AuthNav from './AuthNav';
 import Navigation from './Navigation';
 import UserMenu from './UserMenu';
+import { useSelector } from 'react-redux';
+import { selectIsLogin } from 'redux/auth/auth-selectors';
 
 export default function AppBar() {
+  const isLogin = useSelector(selectIsLogin);
+
+  console.log(isLogin);
   const styles = {
     header: {
       display: 'flex',
@@ -16,8 +21,9 @@ export default function AppBar() {
   return (
     <header style={styles.header}>
       <Navigation />
-      <AuthNav />
-      <UserMenu />
+      {isLogin ? <UserMenu /> : <AuthNav />}
+      {/* <AuthNav /> */}
+      {/* <UserMenu /> */}
     </header>
   );
 }
