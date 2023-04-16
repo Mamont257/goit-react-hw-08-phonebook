@@ -8,7 +8,6 @@ import { selectIsLogin } from 'redux/auth/auth-selectors';
 export default function AppBar() {
   const isLogin = useSelector(selectIsLogin);
 
-  console.log(isLogin);
   const styles = {
     header: {
       display: 'flex',
@@ -22,8 +21,6 @@ export default function AppBar() {
     <header style={styles.header}>
       <Navigation />
       {isLogin ? <UserMenu /> : <AuthNav />}
-      {/* <AuthNav /> */}
-      {/* <UserMenu /> */}
     </header>
   );
 }

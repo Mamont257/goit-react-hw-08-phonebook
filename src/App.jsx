@@ -10,6 +10,7 @@ import { Route, Routes } from 'react-router-dom';
 import RegisterView from 'views/RegisterView';
 import LoginView from 'views/LoginView';
 import HomeView from 'views/HomeView';
+import { fetchCurrentUser } from 'redux/auth/auth-operation';
 
 export function App() {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ export function App() {
   const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(fetchCurrentUser());
   }, [dispatch]);
 
   return (
