@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { tasksReducer } from './contactsSlice';
-import { filterReducer } from './filterSlice';
+import { tasksReducer } from './todos/contactsSlice';
+import { filterReducer } from './todos/filterSlice';
 import authSlice from './auth/auth-slice';
 
 import {

@@ -16,14 +16,10 @@ export default function Navigation() {
 
   return (
     <nav>
-      <NavLink to="/" style={styles.link} activeStyle={styles.activeLink}>
+      <NavLink to="/" style={styles.link}>
         Home
       </NavLink>
-      <NavLink
-        to="/contact"
-        style={styles.link}
-        activeStyle={styles.activeLink}
-      >
+      <NavLink to="/contact" style={styles.link}>
         Contact
       </NavLink>
     </nav>

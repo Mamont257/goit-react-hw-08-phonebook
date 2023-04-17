@@ -5,13 +5,19 @@ import {
   ContactBtn,
 } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchContacts } from 'redux/operations';
-import { selectVisibleContacts } from 'redux/selectors';
+import { deleteContact, fetchContacts } from 'redux/todos/operations';
+import {
+  selectError,
+  selectIsLoading,
+  selectVisibleContacts,
+} from 'redux/todos/selectors';
 import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
   const visibleContacts = useSelector(selectVisibleContacts);
 
@@ -23,6 +29,7 @@ export const ContactList = () => {
     <div>
       <ContactForm />
       <Filter />
+      {isLoading && !error && <b>Request in progress...</b>}
       <ContactsList>
         {visibleContacts.map(({ id, name, number }) => (
           <ContactsListItem key={id}>
