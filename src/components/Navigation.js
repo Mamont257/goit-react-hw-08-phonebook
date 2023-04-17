@@ -1,6 +1,10 @@
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { selectIsLogin } from 'redux/auth/auth-selectors';
 
 export default function Navigation() {
+  const isLogin = useSelector(selectIsLogin);
+
   const styles = {
     link: {
       display: 'inline-block',
@@ -19,9 +23,11 @@ export default function Navigation() {
       <NavLink to="/" style={styles.link}>
         Home
       </NavLink>
-      <NavLink to="/contact" style={styles.link}>
-        Contact
-      </NavLink>
+      {isLogin && (
+        <NavLink to="/contact" style={styles.link}>
+          Contact
+        </NavLink>
+      )}
     </nav>
   );
 }

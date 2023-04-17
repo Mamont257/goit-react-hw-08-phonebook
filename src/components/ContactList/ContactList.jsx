@@ -5,12 +5,12 @@ import {
   ContactBtn,
 } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchContacts } from 'redux/todos/operations';
+import { deleteContact, fetchContacts } from 'redux/todos/todos-operations';
 import {
   selectError,
   selectIsLoading,
   selectVisibleContacts,
-} from 'redux/todos/selectors';
+} from 'redux/todos/todos-selectors';
 import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 

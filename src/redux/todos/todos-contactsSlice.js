@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from './operations';
+import { fetchContacts, addContact, deleteContact } from './todos-operations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -29,18 +29,7 @@ const tasksSlice = createSlice({
     [addContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-
-      let { name } = action.payload;
-
-      const check = state.items.filter(
-        contact => contact.name.toLowerCase() === name.toLowerCase()
-      );
-
-      if (check.length) {
-        alert(`${name} is already in contacts`);
-      } else {
-        state.items.push(action.payload);
-      }
+      state.items.push(action.payload);
     },
     [addContact.rejected]: handleRejected,
 

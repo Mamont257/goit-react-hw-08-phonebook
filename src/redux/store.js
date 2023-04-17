@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { tasksReducer } from './todos/contactsSlice';
-import { filterReducer } from './todos/filterSlice';
+import { tasksReducer } from './todos/todos-contactsSlice';
+import { filterReducer } from './todos/todos-filterSlice';
 import authSlice from './auth/auth-slice';
 
 import {
@@ -24,7 +24,6 @@ const persistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authSlice),
-    // auth: authSlice,
     contacts: tasksReducer,
     filter: filterReducer,
   },
