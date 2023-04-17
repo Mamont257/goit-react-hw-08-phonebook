@@ -16,7 +16,7 @@ export default function AuthNav() {
   return (
     <nav>
       <NavLink
-        to="/restered"
+        to="/registered"
         style={styles.link}
         // activeStyle={styles.activeLink}
       >

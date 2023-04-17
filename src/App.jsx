@@ -22,7 +22,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/contact" element={<ContactList />} />
-        <Route path="/restered" element={<RegisterView />} />
+        <Route path="/registered" element={<RegisterView />} />
         <Route path="/sing-in" element={<LoginView />} />
       </Routes>
     </div>
